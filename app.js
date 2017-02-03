@@ -1,7 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import request from 'request';
-import config from './config';
 
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 const PAGE_TOKEN = process.env.PAGE_TOKEN;
