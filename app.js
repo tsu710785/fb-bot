@@ -68,11 +68,11 @@ function receivedMessage(event) {
     // If we receive a text message, check to see if it matches a keyword
     // and send back the example. Otherwise, just echo the text we received.
     switch (messageText) {
-      case 'generic':
+      case '網站':
         sendGenericMessage(senderID);
         break;
       case '目錄':
-        sendTextMessage(senderID, 'gingda.com.tw');
+        sendTextMessage(senderID, 'https://www.gingda.com.tw');
         break;
       default:
         sendTextMessage(senderID, messageText);
@@ -105,8 +105,8 @@ function sendGenericMessage(recipientId) {
         payload: {
           template_type: "generic",
           elements: [{
-            title: "gingda",
-            subtitle: "Next-generation virtual reality",
+            title: "浚達實業 - 專營CNC車床",
+            subtitle: "專營CNC車床",
             item_url: "https://www.gingda.com.tw",               
             image_url: "http://messengerdemo.parseapp.com/img/rift.png",
             buttons: [{
