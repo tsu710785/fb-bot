@@ -71,7 +71,9 @@ function receivedMessage(event) {
       case 'generic':
         sendGenericMessage(senderID);
         break;
-
+      case '目錄':
+        sendTextMessage(senderID, 'gingda.com.tw');
+        break;
       default:
         sendTextMessage(senderID, messageText);
     }
