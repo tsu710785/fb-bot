@@ -9,7 +9,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public'));
+app.use('/static', express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
   res.send('Hey This is homepage lol');
