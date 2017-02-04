@@ -9,15 +9,24 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
   res.send('Hey This is homepage lol');
 });
+
+app.get('/policy', (req, res) => {
+  res.redirect('policy.html');
+});
+
+
 app.get('/webhook', (req, res) => {
   if (req.query['hub.verify_token'] === VERIFY_TOKEN) {
     res.send(req.query['hub.challenge']);
   }
   res.send('Error, wrong validation token');
 });
+
 app.post('/webhook', (req, res) => {
   var data = req.body;
 
