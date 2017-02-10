@@ -77,14 +77,17 @@ function receivedMessage(event) {
     // If we receive a text message, check to see if it matches a keyword
     // and send back the example. Otherwise, just echo the text we received.
     switch (messageText) {
-      case '網站':
+      case '網站' || 'web' || 'website':
         sendGenericMessage(senderID);
         break;
-      case '目錄':
-        sendTextMessage(senderID, 'https://www.gingda.com.tw');
+      case '目錄' || 'menu':
+        sendTextMessage(senderID, '產品目錄：https://gingda.com.tw/#features-wrapper');
+        break;
+      case '電話' || 'tel' || 'TEL' || 'phone' :
+        sendTextMessage(senderID, '06-2019670');
         break;
       default:
-        sendTextMessage(senderID, messageText);
+        sendTextMessage(senderID, '抱歉，我現在還不夠聰明>_<，可以透過我們網站的聯絡我們告訴我們對於小幫手的建議以及改進唷！');
     }
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
@@ -117,7 +120,6 @@ function sendGenericMessage(recipientId) {
             title: "浚達實業 - 專營CNC車床",
             subtitle: "專營CNC車床",
             item_url: "https://www.gingda.com.tw",               
-            image_url: "http://messengerdemo.parseapp.com/img/rift.png",
             buttons: [{
               type: "web_url",
               url: "https://www.gingda.com.tw",
