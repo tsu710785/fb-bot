@@ -84,7 +84,7 @@ function receivedMessage(event) {
         sendTextMessage(senderID, '產品目錄：https://gingda.com.tw/#features-wrapper');
         break;
       case '電話' || 'tel' || 'TEL' || 'phone' :
-        sendTextMessage(senderID, '06-2019670');
+        sendTextMessage(senderID, '06-2014968');
         break;
       default:
         sendTextMessage(senderID, '抱歉，我現在還不夠聰明>_<，可以透過我們網站的聯絡我們告訴我們對於小幫手的建議以及改進唷！');
